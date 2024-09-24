@@ -57,7 +57,6 @@ button{
 	border: none;
 	border-radius: 2rem;
 	background: var(--btn-bg,var(--lime));
-	color: var(--btn-fg,var(--slate-900));
 	padding: .7rem 2rem;
 	margin-top: min(6vw,2.3rem);
 	cursor: pointer;
@@ -76,9 +75,10 @@ button img{
 	margin-right: .5rem;
 }
 
-button,input{
+button,input,.mortgage-type label{
 	font-family: "Plus Jakarta Sans";
 	font-weight: bolder;
+	color: var(--btn-fg,var(--slate-900));
 }
 
 section > article{
@@ -99,10 +99,10 @@ img{
 }
 
 article span{
-	background: var(--slate-100);
+	background: var(--active-bg,var(--slate-100));
 	padding: .75rem 1rem;
 	display: inline-block;
-	color: var(--slate-700);
+	color: var(--error-clr,var(--slate-700));
 	font-weight: bold;
 }
 
@@ -123,11 +123,20 @@ header span:hover{
 	color: var(--slate-900);
 }
 
-.input-container > div:first-of-type,.mortgage-type{
+.input-container > label+div,.mortgage-type{
 	border: 1px solid var(--active-bg,var(--slate-700));
 	display: flex;
 	border-radius: .2rem;
 	overflow: hidden;
+}
+
+section.active .input-container.active{ 
+	--active-bg: var(--red);
+	--error-clr: var(--white);
+}
+
+section.active .input-container.active .input-error{ 
+	display: block;
 }
 
 .input-container input{
@@ -138,6 +147,8 @@ header span:hover{
 .input-error{
 	color: var(--red);
 	display: none;
+	margin-top: .75rem;
+	font-size: .8rem;
 }
 
 .mortgage-type{
@@ -175,6 +186,10 @@ header span:hover{
 	display: none;
 }
 
+.mortgage-type.active .checkbox{
+	display: block;
+}
+
 .result-section{
 	--title-clr: var(--white);
 	--text-clr: var(--slate-300);
@@ -192,10 +207,6 @@ header span:hover{
 
 .empty-result h2{
 	margin: 1rem 0;
-}
-
-.loaded-result{
-	display: none;
 }
 
 .loaded-result h2{
@@ -222,7 +233,7 @@ header span:hover{
 	padding-bottom: 1rem;
 }
 
-.monthly-value{
+.monthly-value,.interest-value{
 	font-size: 2.5rem;
 	color: var(--lime);
 }
@@ -239,6 +250,10 @@ header span:hover{
 
 .aic{
 	align-items: center;
+}
+
+.dn{
+	display: none;
 }
 
 @media screen and (min-width: 700px) {

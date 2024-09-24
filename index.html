@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -47,7 +48,7 @@
 					</article>
 				</article>
 			</form>
-			<article>
+			<article class="mortg-container">
 				<label for="mortg-type">Mortgage Type</label>
 				<div class="mortgage-type">
 					<div class="checkbox-container" id="repayment-type">
@@ -60,6 +61,11 @@
 						<div class="checkbox"></div>
 					</div>
 					<label for="interest-type">Interest Only</label>
+				</div>
+				<div class="input-container">
+					<div class="input-error">
+						This field is required
+					</div>
 				</div>
 			</article>
 			<button>
@@ -74,23 +80,31 @@
 				<p>Complete the form and click "calculate repayments" to see
 				what your monthly repayments would be.</p>
 			</aside>
-			<aside class="loaded-result">
+			<aside class="loaded-result dn">
 				<h2>Your results</h2>
 				<p>Your results are shown below based on the information you
 				provided. To adjust the results, edit the form and click
 				"calculate repayments" again.</p>
 				<div class="result">
-					<div class="monthly-repayments">
-						<h3>Your monthly repayments</h3>
-						<p class="monthly-value">£1,797.74</p>
+					<div class="payments-result">
+						<div class="monthly-repayments">
+							<h3>Your monthly repayments</h3>
+							<p class="monthly-value">£1,797.74</p>
+						</div>
+						<div class="total-repay">
+							<h3>Total you'll repay over the term</h3>
+							<p class="repay-value">£539,322.94</p>
+						</div>
 					</div>
-					<div class="total-repay">
-						<h3>Total you'll repay over the term</h3>
-						<p class="repay-value">£539,322.94</p>
+					<div class="interest-result dn">
+						<h3>Your monthly interest repayments</h3>
+						<p class="interest-value"></p>
 					</div>
 				</div>
 			</aside>
 		</section>
 	</main>
+
+	<script src="script.js"></script>
 </body>
 </html>
